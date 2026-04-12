@@ -1,0 +1,42 @@
+steps:
+  # Build the Docker image
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - build
+      - -t
+      - "${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPO}/${_SERVICE_NAME}:${COMMIT_SHA}"
+      - .
+    dir: backend/cards-service
+
+  # Push image to Artifact Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - push
+      - "${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPO}/${_SERVICE_NAME}:${COMMIT_SHA}"
+
+  # Deploy to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - "${_SERVICE_NAME}"
+      - "--image=${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPO}/${_SERVICE_NAME}:${COMMIT_SHA}"
+      - "--region=${_DEPLOY_REGION}"
+      - "--platform=managed"
+      - "--allow-unauthenticated"
+      - "--set-secrets=DATABASE_URL=DATABASE_URL:latest,CARDDATA_API_KEY=CARDDATA_API_KEY:latest"
+      - "--min-instances=0"
+      - "--max-instances=10"
+      - "--memory=512Mi"
+      - "--cpu=1"
+      - "--timeout=60"
+
+substitutions:
+  _AR_HOSTNAME: us-central1-docker.pkg.dev
+  _AR_REPO: walletace
+  _SERVICE_NAME: walletace-cards
+  _DEPLOY_REGION: us-central1
+
+options:
+  logging: CLOUD_LOGGING_ONLY

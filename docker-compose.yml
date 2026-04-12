@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+  # ── Redis (local session cache) ──────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ── Cards Service (port 8001) ─────────────────────────────────────────────────
+  cards-service:
+    build:
+      context: ./backend/cards-service
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8080"
+    env_file:
+      - ./backend/cards-service/.env
+    environment:
+      - PORT=8080
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ── Recommendation Service (port 8000) ────────────────────────────────────────
+  recommendation-service:
+    build:
+      context: ./backend/recommendation-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8080"
+    env_file:
+      - ./backend/recommendation-service/.env
+    environment:
+      - PORT=8080
+      - CARDS_SERVICE_URL=http://cards-service:8080
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      cards-service:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
