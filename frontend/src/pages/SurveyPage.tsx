@@ -90,7 +90,7 @@ export default function SurveyPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-gray-50">
+    <div className="flex h-[100dvh] flex-col bg-gray-50">
       {/* Header */}
       <header className="border-b border-gray-100 bg-white px-4 py-4 sm:px-8">
         <div className="mx-auto max-w-xl">
@@ -110,7 +110,7 @@ export default function SurveyPage() {
       </header>
 
       {/* Question area */}
-      <main className="flex flex-1 items-start justify-center px-4 py-10 sm:px-8">
+      <main className="flex flex-1 overflow-y-auto items-start justify-center px-4 py-10 sm:px-8">
         <div className="w-full max-w-xl">
           <QuestionSlide
             question={question}
