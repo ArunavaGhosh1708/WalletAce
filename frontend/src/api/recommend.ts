@@ -42,7 +42,7 @@ export interface RecommendationResponse {
 }
 
 /** Convert React camelCase survey state → snake_case API payload. */
-function toApiPayload(survey: SurveyState, year: number) {
+function toApiPayload(survey: SurveyState) {
   return {
     user_name: survey.userName.trim() || null,
     fico_tier: survey.ficoTier,
@@ -76,7 +76,7 @@ export async function getRecommendations(
 ): Promise<RecommendationResponse> {
   const { data } = await axios.post<RecommendationResponse>(
     `${BASE_URL}/api/v1/recommend?year=${year}`,
-    toApiPayload(survey, year),
+    toApiPayload(survey),
     { headers: { 'Content-Type': 'application/json' } },
   )
   return data
