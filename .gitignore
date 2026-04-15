@@ -2,6 +2,14 @@
 .env
 .env.local
 .env.*.local
+.env.production
+
+# ── GCP / Firebase service account keys ──────────────────────────────────────
+*-key.json
+*-sa-key.json
+service-account*.json
+firebase-debug.log
+.firebaserc
 
 # ── Python ────────────────────────────────────────────────────────────────────
 __pycache__/
