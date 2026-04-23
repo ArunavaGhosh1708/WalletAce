@@ -1,4 +1,6 @@
-from fastapi import APIRouter
+import asyncio
+
+from fastapi import APIRouter, BackgroundTasks
 
 from app.sync.card_syncer import run_sync
 
@@ -6,9 +8,10 @@ router = APIRouter(prefix="/admin", tags=["admin"])
 
 
 @router.post("/sync", summary="Trigger card catalogue sync manually")
-async def trigger_sync() -> dict:
+async def trigger_sync(background_tasks: BackgroundTasks) -> dict:
     """
-    Runs the DeepSeek card sync immediately.
-    Same operation as the weekly cron — upserts all 48 cards.
+    Kicks off the DeepSeek card sync in the background and returns immediately.
+    Check Cloud Run logs for progress and final upsert count.
     """
-    return await run_sync()
+    background_tasks.add_task(run_sync)
+    return {"status": "sync started", "message": "Check logs for progress"}

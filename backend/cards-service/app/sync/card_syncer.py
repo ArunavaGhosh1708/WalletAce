@@ -97,6 +97,12 @@ AFFILIATE_LINKS: dict[str, str] = {
     "IHG One Rewards Premier Credit Card":               "https://creditcards.chase.com/travel-credit-cards/ihg/premier",
     "IHG One Rewards Traveler Credit Card":              "https://creditcards.chase.com/travel-credit-cards/ihg/traveler",
 
+    # ── Airline co-branded — missing co-branded cards ─────────────────────────
+    "Southwest Rapid Rewards Premier Credit Card":       "https://creditcards.chase.com/travel-credit-cards/southwest/premier",
+    "Marriott Bonvoy Bold Credit Card":                  "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
+    "Marriott Bonvoy Bevy American Express Card":        "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/",
+    "Hilton Honors American Express Aspire Card":        "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+
     # ── Cash back ─────────────────────────────────────────────────────────────
     "Chase Freedom Unlimited":                           "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
     "Chase Freedom Flex":                                "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
@@ -123,7 +129,54 @@ AFFILIATE_LINKS: dict[str, str] = {
     # ── Balance transfer / low APR ────────────────────────────────────────────
     # Citi Simplicity — use the current product slug
     "Citi Simplicity Card":                              "https://www.citi.com/credit-cards/citi-simplicity-credit-card",
+    "Citi Diamond Preferred Card":                       "https://www.citi.com/credit-cards/citi-diamond-preferred-credit-card",
     "Wells Fargo Reflect Card":                          "https://www.wellsfargo.com/credit-cards/reflect/",
+
+    # ── Citi additional ───────────────────────────────────────────────────────
+    "Citi Custom Cash Card":                             "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+
+    # ── Wells Fargo additional ────────────────────────────────────────────────
+    "Wells Fargo Autograph Card":                        "https://www.wellsfargo.com/credit-cards/autograph/",
+    "Wells Fargo Autograph Journey Visa Card":           "https://www.wellsfargo.com/credit-cards/autograph-journey/",
+
+    # ── Bank of America additional ────────────────────────────────────────────
+    "Bank of America Travel Rewards Credit Card":        "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/",
+    "Bank of America Premium Rewards Credit Card":       "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/",
+
+    # ── US Bank additional ────────────────────────────────────────────────────
+    "U.S. Bank Altitude Connect Visa Signature Card":    "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
+
+    # ── Student cards ─────────────────────────────────────────────────────────
+    "Capital One SavorOne Student Cash Rewards Credit Card":   "https://creditcards.capitalone.com/savor-one-student-credit-card/",
+    "Capital One Quicksilver Student Cash Rewards Credit Card": "https://creditcards.capitalone.com/quicksilver-student-credit-card/",
+    "Chase Freedom Student Credit Card":                 "https://creditcards.chase.com/cash-back-credit-cards/freedom/student",
+    "Chase Freedom Rise Credit Card":                    "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise",
+
+    # ── Credit unions ─────────────────────────────────────────────────────────
+    "Navy Federal cashRewards Credit Card":              "https://www.navyfederal.org/loans-cards/credit-cards/cashrewards/",
+    "Navy Federal GO REWARDS Credit Card":               "https://www.navyfederal.org/loans-cards/credit-cards/go-rewards/",
+    "Navy Federal Platinum Credit Card":                 "https://www.navyfederal.org/loans-cards/credit-cards/platinum/",
+    "Navy Federal More Rewards American Express Card":   "https://www.navyfederal.org/loans-cards/credit-cards/more-rewards/",
+    "Navy Federal nRewards Secured Credit Card":         "https://www.navyfederal.org/loans-cards/credit-cards/nrewards-secured/",
+    "Alliant Cashback Visa Signature Card":              "https://www.alliantcreditunion.org/bank/visa-signature-credit-card",
+    "Alliant Visa Platinum Card":                        "https://www.alliantcreditunion.org/bank/visa-platinum-card",
+
+    # ── TD Bank ───────────────────────────────────────────────────────────────
+    "TD Cash Credit Card":                               "https://www.td.com/us/en/personal-banking/credit-cards/td-cash-credit-card",
+    "TD Double Up Credit Card":                          "https://www.td.com/us/en/personal-banking/credit-cards/td-double-up-credit-card",
+
+    # ── Fintech / neobank ─────────────────────────────────────────────────────
+    "SoFi Credit Card":                                  "https://www.sofi.com/credit-card/",
+    "Robinhood Gold Card":                               "https://robinhood.com/creditcard/",
+    "Chime Credit Builder Secured Visa Credit Card":     "https://www.chime.com/credit-builder-visa-credit-card/",
+    "Upgrade Cash Rewards Visa":                         "https://www.upgrade.com/cash-rewards-visa/",
+    "Upgrade Triple Cash Rewards Visa":                  "https://www.upgrade.com/triple-cash-rewards-visa/",
+    "Grow Credit Mastercard":                            "https://www.growcredit.com/card",
+
+    # ── Synchrony / store cards ───────────────────────────────────────────────
+    "PayPal Cashback Mastercard":                        "https://www.paypal.com/us/webapps/mpp/cashback-credit-card",
+    "Venmo Credit Card":                                 "https://venmo.com/creditcard/",
+    "Sam's Club Mastercard":                             "https://www.samsclub.com/content/credit-center",
 
     # ── Fair / limited credit ─────────────────────────────────────────────────
     "Capital One Platinum Credit Card":                  "https://creditcards.capitalone.com/platinum-credit-card/",
@@ -273,6 +326,49 @@ _BATCH_5_CARDS = [
     "JetBlue Plus Card",
 ]
 
+_BATCH_6_CARDS = [
+    "Discover it Student Chrome",
+    "Citi Custom Cash Card",
+    "Citi Diamond Preferred Card",
+    "Wells Fargo Autograph Card",
+    "Wells Fargo Autograph Journey Visa Card",
+    "Bank of America Travel Rewards Credit Card",
+    "Bank of America Premium Rewards Credit Card",
+    "Capital One SavorOne Student Cash Rewards Credit Card",
+    "Capital One Quicksilver Student Cash Rewards Credit Card",
+    "Chase Freedom Student Credit Card",
+    "Chase Freedom Rise Credit Card",
+    "U.S. Bank Altitude Connect Visa Signature Card",
+]
+
+_BATCH_7_CARDS = [
+    "Navy Federal cashRewards Credit Card",
+    "Navy Federal GO REWARDS Credit Card",
+    "Navy Federal Platinum Credit Card",
+    "Navy Federal More Rewards American Express Card",
+    "Navy Federal nRewards Secured Credit Card",
+    "Alliant Cashback Visa Signature Card",
+    "Alliant Visa Platinum Card",
+    "SoFi Credit Card",
+    "Robinhood Gold Card",
+    "TD Cash Credit Card",
+    "TD Double Up Credit Card",
+]
+
+_BATCH_8_CARDS = [
+    "Chime Credit Builder Secured Visa Credit Card",
+    "Upgrade Cash Rewards Visa",
+    "Upgrade Triple Cash Rewards Visa",
+    "PayPal Cashback Mastercard",
+    "Venmo Credit Card",
+    "Sam's Club Mastercard",
+    "Grow Credit Mastercard",
+    "Hilton Honors American Express Aspire Card",
+    "Marriott Bonvoy Bevy American Express Card",
+    "Marriott Bonvoy Bold Credit Card",
+    "Southwest Rapid Rewards Premier Credit Card",
+]
+
 
 def _exclusion_block(already_done: list[list[str]]) -> str:
     """Build a 'do NOT include' list from all prior batches for injection into the next prompt."""
@@ -302,6 +398,9 @@ BATCHES: list[tuple[list[str], str]] = [
     (_BATCH_3_CARDS, _make_prompt(_BATCH_3_CARDS, [_BATCH_1_CARDS, _BATCH_2_CARDS])),
     (_BATCH_4_CARDS, _make_prompt(_BATCH_4_CARDS, [_BATCH_1_CARDS, _BATCH_2_CARDS, _BATCH_3_CARDS])),
     (_BATCH_5_CARDS, _make_prompt(_BATCH_5_CARDS, [_BATCH_1_CARDS, _BATCH_2_CARDS, _BATCH_3_CARDS, _BATCH_4_CARDS])),
+    (_BATCH_6_CARDS, _make_prompt(_BATCH_6_CARDS, [_BATCH_1_CARDS, _BATCH_2_CARDS, _BATCH_3_CARDS, _BATCH_4_CARDS, _BATCH_5_CARDS])),
+    (_BATCH_7_CARDS, _make_prompt(_BATCH_7_CARDS, [_BATCH_1_CARDS, _BATCH_2_CARDS, _BATCH_3_CARDS, _BATCH_4_CARDS, _BATCH_5_CARDS, _BATCH_6_CARDS])),
+    (_BATCH_8_CARDS, _make_prompt(_BATCH_8_CARDS, [_BATCH_1_CARDS, _BATCH_2_CARDS, _BATCH_3_CARDS, _BATCH_4_CARDS, _BATCH_5_CARDS, _BATCH_6_CARDS, _BATCH_7_CARDS])),
 ]
 
 
@@ -372,9 +471,35 @@ INSERT INTO cards (
     $26, $27,
     $28, $29
 )
-ON CONFLICT (issuer, card_name) DO UPDATE
-    SET affiliate_link = EXCLUDED.affiliate_link
-    WHERE cards.affiliate_link LIKE 'https://example.com%'
+ON CONFLICT (issuer, card_name) DO UPDATE SET
+    credit_tier_min        = EXCLUDED.credit_tier_min,
+    income_minimum         = EXCLUDED.income_minimum,
+    annual_fee             = EXCLUDED.annual_fee,
+    intro_apr_months       = EXCLUDED.intro_apr_months,
+    ongoing_apr_min        = EXCLUDED.ongoing_apr_min,
+    ongoing_apr_max        = EXCLUDED.ongoing_apr_max,
+    reward_type            = EXCLUDED.reward_type,
+    reward_network         = EXCLUDED.reward_network,
+    cpp_cents              = EXCLUDED.cpp_cents,
+    base_rate              = EXCLUDED.base_rate,
+    cat_grocery_rate       = EXCLUDED.cat_grocery_rate,
+    cat_dining_rate        = EXCLUDED.cat_dining_rate,
+    cat_gas_rate           = EXCLUDED.cat_gas_rate,
+    cat_travel_rate        = EXCLUDED.cat_travel_rate,
+    cat_transit_rate       = EXCLUDED.cat_transit_rate,
+    cat_streaming_rate     = EXCLUDED.cat_streaming_rate,
+    cat_online_retail_rate = EXCLUDED.cat_online_retail_rate,
+    cat_utilities_rate     = EXCLUDED.cat_utilities_rate,
+    signup_bonus_value     = EXCLUDED.signup_bonus_value,
+    signup_bonus_spend_req = EXCLUDED.signup_bonus_spend_req,
+    signup_bonus_months    = EXCLUDED.signup_bonus_months,
+    has_lounge_access      = EXCLUDED.has_lounge_access,
+    has_global_entry       = EXCLUDED.has_global_entry,
+    airline_affinity       = EXCLUDED.airline_affinity,
+    hotel_affinity         = EXCLUDED.hotel_affinity,
+    issuer_rule_524        = EXCLUDED.issuer_rule_524,
+    affiliate_link         = EXCLUDED.affiliate_link,
+    last_updated           = now()
 """
 
 

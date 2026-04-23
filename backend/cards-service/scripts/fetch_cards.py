@@ -124,6 +124,46 @@ _B5 = [
     "Alaska Airlines Visa Signature Card",
     "JetBlue Plus Card",
 ]
+_B6 = [
+    "Discover it Student Chrome",
+    "Citi Custom Cash Card",
+    "Citi Diamond Preferred Card",
+    "Wells Fargo Autograph Card",
+    "Wells Fargo Autograph Journey Visa Card",
+    "Bank of America Travel Rewards Credit Card",
+    "Bank of America Premium Rewards Credit Card",
+    "Capital One SavorOne Student Cash Rewards Credit Card",
+    "Capital One Quicksilver Student Cash Rewards Credit Card",
+    "Chase Freedom Student Credit Card",
+    "Chase Freedom Rise Credit Card",
+    "U.S. Bank Altitude Connect Visa Signature Card",
+]
+_B7 = [
+    "Navy Federal cashRewards Credit Card",
+    "Navy Federal GO REWARDS Credit Card",
+    "Navy Federal Platinum Credit Card",
+    "Navy Federal More Rewards American Express Card",
+    "Navy Federal nRewards Secured Credit Card",
+    "Alliant Cashback Visa Signature Card",
+    "Alliant Visa Platinum Card",
+    "SoFi Credit Card",
+    "Robinhood Gold Card",
+    "TD Cash Credit Card",
+    "TD Double Up Credit Card",
+]
+_B8 = [
+    "Chime Credit Builder Secured Visa Credit Card",
+    "Upgrade Cash Rewards Visa",
+    "Upgrade Triple Cash Rewards Visa",
+    "PayPal Cashback Mastercard",
+    "Venmo Credit Card",
+    "Sam's Club Mastercard",
+    "Grow Credit Mastercard",
+    "Hilton Honors American Express Aspire Card",
+    "Marriott Bonvoy Bevy American Express Card",
+    "Marriott Bonvoy Bold Credit Card",
+    "Southwest Rapid Rewards Premier Credit Card",
+]
 
 
 def _make_prompt(card_list: list[str], prior_batches: list[list[str]]) -> str:
@@ -149,8 +189,14 @@ BATCH_2_PROMPT = _make_prompt(_B2, [_B1])
 BATCH_3_PROMPT = _make_prompt(_B3, [_B1, _B2])
 BATCH_4_PROMPT = _make_prompt(_B4, [_B1, _B2, _B3])
 BATCH_5_PROMPT = _make_prompt(_B5, [_B1, _B2, _B3, _B4])
+BATCH_6_PROMPT = _make_prompt(_B6, [_B1, _B2, _B3, _B4, _B5])
+BATCH_7_PROMPT = _make_prompt(_B7, [_B1, _B2, _B3, _B4, _B5, _B6])
+BATCH_8_PROMPT = _make_prompt(_B8, [_B1, _B2, _B3, _B4, _B5, _B6, _B7])
 
-BATCHES = [BATCH_1_PROMPT, BATCH_2_PROMPT, BATCH_3_PROMPT, BATCH_4_PROMPT, BATCH_5_PROMPT]
+BATCHES = [
+    BATCH_1_PROMPT, BATCH_2_PROMPT, BATCH_3_PROMPT, BATCH_4_PROMPT,
+    BATCH_5_PROMPT, BATCH_6_PROMPT, BATCH_7_PROMPT, BATCH_8_PROMPT,
+]
 
 
 # ── DeepSeek call ─────────────────────────────────────────────────────────────
@@ -219,16 +265,50 @@ AFFILIATE_LINKS: dict[str, str] = {
     "Fidelity Rewards Visa Signature Card":      "https://www.fidelity.com/cash-management/visa-signature-card",
     "Apple Card":                                "https://www.apple.com/apple-card/",
     "Bilt Mastercard":                           "https://www.biltrewards.com/card",
-    "Citi Simplicity Card":                      "https://www.citi.com/credit-cards/citi-simplicity-credit-card",
-    "Wells Fargo Reflect Card":                  "https://www.wellsfargo.com/credit-cards/reflect/",
-    "Capital One Platinum Credit Card":          "https://creditcards.capitalone.com/platinum-credit-card/",
-    "Petal 2 Visa Credit Card":                  "https://www.petalcard.com/",
-    "Mission Lane Visa Credit Card":             "https://missionlane.com/credit-cards/",
-    "Discover it Student Cash Back":             "https://www.discover.com/credit-cards/student/it-card.html",
-    "Discover it Secured Credit Card":           "https://www.discover.com/credit-cards/secured/",
-    "Capital One Platinum Secured Credit Card":  "https://creditcards.capitalone.com/platinum-secured-credit-card/",
-    "OpenSky Secured Visa Credit Card":          "https://www.openskycc.com/",
-    "Self Secured Visa Credit Card":             "https://www.self.inc/credit-card",
+    "Citi Simplicity Card":                              "https://www.citi.com/credit-cards/citi-simplicity-credit-card",
+    "Citi Diamond Preferred Card":                       "https://www.citi.com/credit-cards/citi-diamond-preferred-credit-card",
+    "Citi Custom Cash Card":                             "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+    "Wells Fargo Reflect Card":                          "https://www.wellsfargo.com/credit-cards/reflect/",
+    "Wells Fargo Autograph Card":                        "https://www.wellsfargo.com/credit-cards/autograph/",
+    "Wells Fargo Autograph Journey Visa Card":           "https://www.wellsfargo.com/credit-cards/autograph-journey/",
+    "Bank of America Travel Rewards Credit Card":        "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/",
+    "Bank of America Premium Rewards Credit Card":       "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/",
+    "U.S. Bank Altitude Connect Visa Signature Card":    "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
+    "Capital One Platinum Credit Card":                  "https://creditcards.capitalone.com/platinum-credit-card/",
+    "Capital One SavorOne Student Cash Rewards Credit Card":    "https://creditcards.capitalone.com/savor-one-student-credit-card/",
+    "Capital One Quicksilver Student Cash Rewards Credit Card": "https://creditcards.capitalone.com/quicksilver-student-credit-card/",
+    "Chase Freedom Student Credit Card":                 "https://creditcards.chase.com/cash-back-credit-cards/freedom/student",
+    "Chase Freedom Rise Credit Card":                    "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise",
+    "Southwest Rapid Rewards Premier Credit Card":       "https://creditcards.chase.com/travel-credit-cards/southwest/premier",
+    "Marriott Bonvoy Bold Credit Card":                  "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
+    "Marriott Bonvoy Bevy American Express Card":        "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/",
+    "Hilton Honors American Express Aspire Card":        "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+    "Petal 2 Visa Credit Card":                          "https://www.petalcard.com/",
+    "Mission Lane Visa Credit Card":                     "https://missionlane.com/credit-cards/",
+    "Discover it Student Cash Back":                     "https://www.discover.com/credit-cards/student/it-card.html",
+    "Discover it Student Chrome":                        "https://www.discover.com/credit-cards/student/chrome-card.html",
+    "Discover it Secured Credit Card":                   "https://www.discover.com/credit-cards/secured/",
+    "Capital One Platinum Secured Credit Card":          "https://creditcards.capitalone.com/platinum-secured-credit-card/",
+    "OpenSky Secured Visa Credit Card":                  "https://www.openskycc.com/apply",
+    "Self Secured Visa Credit Card":                     "https://www.self.inc/credit-card",
+    "Navy Federal cashRewards Credit Card":              "https://www.navyfederal.org/loans-cards/credit-cards/cashrewards/",
+    "Navy Federal GO REWARDS Credit Card":               "https://www.navyfederal.org/loans-cards/credit-cards/go-rewards/",
+    "Navy Federal Platinum Credit Card":                 "https://www.navyfederal.org/loans-cards/credit-cards/platinum/",
+    "Navy Federal More Rewards American Express Card":   "https://www.navyfederal.org/loans-cards/credit-cards/more-rewards/",
+    "Navy Federal nRewards Secured Credit Card":         "https://www.navyfederal.org/loans-cards/credit-cards/nrewards-secured/",
+    "Alliant Cashback Visa Signature Card":              "https://www.alliantcreditunion.org/bank/visa-signature-credit-card",
+    "Alliant Visa Platinum Card":                        "https://www.alliantcreditunion.org/bank/visa-platinum-card",
+    "TD Cash Credit Card":                               "https://www.td.com/us/en/personal-banking/credit-cards/td-cash-credit-card",
+    "TD Double Up Credit Card":                          "https://www.td.com/us/en/personal-banking/credit-cards/td-double-up-credit-card",
+    "SoFi Credit Card":                                  "https://www.sofi.com/credit-card/",
+    "Robinhood Gold Card":                               "https://robinhood.com/creditcard/",
+    "Chime Credit Builder Secured Visa Credit Card":     "https://www.chime.com/credit-builder-visa-credit-card/",
+    "Upgrade Cash Rewards Visa":                         "https://www.upgrade.com/cash-rewards-visa/",
+    "Upgrade Triple Cash Rewards Visa":                  "https://www.upgrade.com/triple-cash-rewards-visa/",
+    "PayPal Cashback Mastercard":                        "https://www.paypal.com/us/webapps/mpp/cashback-credit-card",
+    "Venmo Credit Card":                                 "https://venmo.com/creditcard/",
+    "Sam's Club Mastercard":                             "https://www.samsclub.com/content/credit-center",
+    "Grow Credit Mastercard":                            "https://www.growcredit.com/card",
 }
 
 
@@ -249,7 +329,7 @@ def fetch_cards_from_deepseek() -> list[dict]:
         base_url="https://api.deepseek.com",
     )
     # Pair each batch list with its prompt so we know the expected card count
-    batch_pairs = list(zip([_B1, _B2, _B3, _B4, _B5], BATCHES))
+    batch_pairs = list(zip([_B1, _B2, _B3, _B4, _B5, _B6, _B7, _B8], BATCHES))
     all_cards: list[dict] = []
     for i, (card_list, prompt) in enumerate(batch_pairs, 1):
         batch = _call_deepseek(client, prompt, i, len(card_list))
