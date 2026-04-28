@@ -228,6 +228,7 @@ def _call_deepseek(client: OpenAI, prompt: str, batch_num: int, expected: int) -
 
 AFFILIATE_LINKS: dict[str, str] = {
     "Chase Sapphire Reserve":                   "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+    "The Platinum Card from American Express":   "https://www.americanexpress.com/us/credit-cards/card/platinum/",
     "Amex Platinum":                             "https://www.americanexpress.com/us/credit-cards/card/platinum/",
     "Capital One Venture X":                     "https://creditcards.capitalone.com/venture-x-credit-card/",
     "US Bank Altitude Reserve":                  "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",

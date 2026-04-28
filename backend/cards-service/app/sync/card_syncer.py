@@ -29,6 +29,7 @@ AFFILIATE_LINKS: dict[str, str] = {
     # ── Premium travel ────────────────────────────────────────────────────────
     "Chase Sapphire Reserve":                            "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
     "American Express Platinum Card":                    "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+    "The Platinum Card from American Express":           "https://www.americanexpress.com/us/credit-cards/card/platinum/",
     "Amex Platinum":                                     "https://www.americanexpress.com/us/credit-cards/card/platinum/",
     "Capital One Venture X Rewards Credit Card":         "https://creditcards.capitalone.com/venture-x-credit-card/",
     "Capital One Venture X":                             "https://creditcards.capitalone.com/venture-x-credit-card/",
